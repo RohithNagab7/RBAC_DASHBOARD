@@ -73,9 +73,6 @@ The application will be available at `http://localhost:3000`.
 *Note: You can create these roles via the Super Admin dashboard once the first Super Admin is registered.*
 
 -   **Super Admin**: `superadmin@test.com` / `Password123`
--   **Admin**: `admin@test.com` / `Password123`
--   **User**: `user@test.com` / `Password123`
 
 ---
 
-Built with ❤️ by **Rohith** for **EBANI TECH**
