@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EBANI TECH - Role-Based Dashboard System
 
-## Getting Started
+A full-stack, enterprise-grade Role-Based Access Control (RBAC) dashboard built with **Next.js 15**, **MongoDB**, and **JWT-based authentication**.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   **Multi-Role Architecture**:
+    -   **Super Admin**: Full system control. Can manage Administrators and all system Users.
+    -   **Admin**: Team management. Can manage Users they have created.
+    -   **User**: Personal Workspace. Access to a dedicated Tasks CRUD module.
+-   **Security**:
+    -   JWT-based authentication via `jose`.
+    -   HttpOnly secure cookies for Server Component authentication.
+    -   Bcrypt password hashing.
+    -   Middleware-level route protection.
+-   **Premium UI/UX**:
+    -   Modern Dark Mode aesthetic using **Vanilla CSS**.
+    -   Glassmorphism effects and smooth transitions.
+    -   Debounced search and server-side pagination for all data tables.
+    -   Role-aware navigation Sidebar.
+-   **Performance**:
+    -   Next.js Server Components for initial data fetching (SSG/SSR).
+    -   Consolidated client-side state management for fluid CRUD operations.
+
+## 🛠️ Technology Stack
+
+-   **Framework**: Next.js 15 (App Router)
+-   **Database**: MongoDB with Mongoose
+-   **Auth**: JWT (jose), Bcrypt, Next.js Middleware
+-   **UI**: Vanilla CSS, Google Fonts (Inter, Outfit)
+-   **Validation**: Zod
+-   **Utilities**: Axios for API calls, useDebounce hook for search
+
+## 📂 Project Structure
+
+-   `src/app/api`: Next.js Route Handlers (RESTful API).
+-   `src/modules`: Domain-driven backend logic (Services, Controllers).
+-   `src/repositories`: Data access layer (Mongoose models).
+-   `src/components`: Reusable UI components (Modals, Cards, Sidebar).
+-   `src/services`: Frontend API service layer.
+-   `src/hooks`: Custom React hooks (`useAuth`, `useDebounce`).
+-   `src/lib`: Shared utilities (validation, auth context, api helper).
+
+## 👨‍💻 Developer Acknowledgement
+**Developed by Rohith** - EBANI TECH Recruitment Assessment.
+
+## 📥 Setup Instructions
+
+### 1. Prerequisites
+-   Node.js 18+ 
+-   MongoDB instance (local or Atlas)
+
+### 2. Environment Variables
+Create a `.env` file in the root directory:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_key
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Installation
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Run the Application
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Credentials for Testing (Example)
+*Note: You can create these roles via the Super Admin dashboard once the first Super Admin is registered.*
 
-## Learn More
+-   **Super Admin**: `superadmin@test.com` / `Password123`
+-   **Admin**: `admin@test.com` / `Password123`
+-   **User**: `user@test.com` / `Password123`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ by **Rohith** for **EBANI TECH**
